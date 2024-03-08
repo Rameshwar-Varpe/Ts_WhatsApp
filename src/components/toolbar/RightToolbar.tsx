@@ -36,15 +36,27 @@ export default function RightToolbar() {
                 >
                     <Typography color="#111b21" fontSize="16px" fontFamily="inherit"
                         sx={{
-                            // maxWidth: "100%", // percentage also works
-                            // whiteSpace: "nowrap",
-                            // overflow: "hidden",
-                            // textOverflow: "ellipsis"
+                            overflow:"hidden",
+                            textOverflow:"ellipsis",
+                            display: "-webkit-box",
+                            WebkitLineClamp: "1",
+                            WebkitBoxOrient: "vertical",
                         }}
                     >
                         {selectedContact.name}
                     </Typography>
-                    <Typography color="#667781" fontSize="13px" fontFamily="inherit">
+                    <Typography 
+                    color="#667781" 
+                    fontSize="13px" 
+                    fontFamily="inherit"
+                    sx={{
+                        overflow:'hidden',
+                        textOverflow:'ellipsis',
+                        display:'-webkit-box',
+                        WebkitLineClamp:"1",
+                        WebkitBoxOrient:'vertical'
+                    }}
+                    >
                         {selectedContact.lastActive}
                     </Typography>
                 </Box>

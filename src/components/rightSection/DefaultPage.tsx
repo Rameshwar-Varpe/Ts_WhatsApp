@@ -53,6 +53,9 @@ export default function DefaultPage() {
                     textSizeAdjust: "14px",
                     fontFamily: "inherit",
                     textTransform:"none",
+                    "&:hover": {
+                        backgroundColor: "transparent",
+                    },
                 }}
             >
                 {/* G<Typography textTransform={"lowercase"} fontFamily={"inherit"}>et the app</Typography> */}

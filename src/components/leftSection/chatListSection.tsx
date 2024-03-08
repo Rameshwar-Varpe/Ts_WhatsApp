@@ -53,79 +53,92 @@ function ChatListSection() {
             }}
         >
             {contacts.map((contact, index) => (
-                <Button
-                    key={index}
-                    fullWidth
-                    onClick={() => handleButtonClick(contact)}
-                    sx={{
-                        textAlign: "left",
-                        padding: "0",
-                        "&:hover": {
-                            backgroundColor: "transparent",
-                        },
-                    }}
-                >
-                    <Stack width={"inherit"}>
-                        <Grid
-                            container
-                            key={index}
-                            width="inherit"
-                            justifyContent="space-between"
-                            alignItems="center"
-                        >
-                            <Stack direction="row" alignItems="center">
-                                <Box padding="12px 15px 12px 13px">
-                                    <Avatar
-                                        key={index}
-                                        alt="profile picture"
-                                        src={contact.profile}
-                                        sx={{ height: "49px", width: "49px" }}
-                                    />
-                                </Box>
+                <>
+                    <Stack
+                        key={index}
+                        onClick={() => handleButtonClick(contact)}
+                        sx={{
+                            width: "inherit",
+                            textAlign: "left",
+                            padding: "0",
+                            "&:hover": {
+                                backgroundColor: "transparent",
+                            },
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            flexDirection: "row"
+                        }}
+                    >
+                        <Stack direction="row" alignItems="center" overflow={"hidden"}  >
+                            <Box padding="12px 15px 12px 13px">
+                                <Avatar
+                                    key={index}
+                                    alt="profile picture"
+                                    src={contact.profile}
+                                    sx={{ height: "49px", width: "49px" }}
+                                />
+                            </Box>
 
-                                <Grid padding="0 15px 0 0">
-                                    <Typography
-                                        fontSize="17px"
-                                        color="#111B21"
-                                        fontFamily={"inherit"}
-                                        sx={{ textTransform: "none" }}
-                                    >
-                                        {contact.name}
-                                    </Typography>
-                                    <Typography
-                                        fontFamily={"inherit"}
-                                        fontSize="14px"
-                                        color="#667781"
-                                        sx={{
-                                            overflow: "hidden",
-                                            textOverflow: "ellipsis",
-                                            whiteSpace: "nowrap",
-                                            maxWidth: "100%",
-                                            textTransform: "none",
-                                        }}
-                                    >
-                                        {chats.find((chat) => chat.mobile === contact.mobile)?.content || ""}
-                                    </Typography>
-                                </Grid>
-                            </Stack>
-                            <Stack padding={"0 15px 0 0"}>
+                            <Box padding="0 15px 0 0" overflow={'inherit'}>
                                 <Typography
-                                    color={"#667781"}
+                                    fontSize="17px"
+                                    color="#111B21"
                                     fontFamily={"inherit"}
-                                    fontSize={"12px"}
-                                    sx={{ textTransform: "none" }}
-                                >
-                                    {contact.lastChat}
-                                </Typography>
+                                    sx={{
+                                        overflow: 'inherit',
+                                        textOverflow: 'ellipsis',
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: '1',
+                                        WebkitBoxOrient: 'vertical'
 
-                                <Typography>{ }</Typography>
-                            </Stack>
-                        </Grid>
-                        <Box paddingRight={"15px"}>
-                            <Divider variant="inset" />
-                        </Box>
+                                        // overflowX:'hidden',
+                                        // overflowY:'hidden',
+                                        // display:'inline-block',
+                                        // textOverflow:'ellipsis',
+                                        // whiteSpace:'nowrap'
+                                    }}
+                                >
+                                    {contact.name}
+                                </Typography>
+                                <Typography
+                                    fontFamily={"inherit"}
+                                    fontSize="14px"
+                                    color="#667781"
+                                    sx={{
+                                        overflow: "inherit",
+                                        textOverflow: "ellipsis",
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: '1',
+                                        WebkitBoxOrient: 'vertical'
+                                    }}
+                                >
+                                    {chats.find((chat) => chat.mobile === contact.mobile)?.content || ""}
+                                </Typography>
+                            </Box>
+                        </Stack>
+                        <Stack padding={"0 15px 0 0"}>
+                            <Typography
+                                color={"#667781"}
+                                fontFamily={"inherit"}
+                                fontSize={"12px"}
+                                sx={{
+                                    textAlign: "end"
+                                }}
+                            >
+                                {contact.lastChat}
+                            </Typography>
+                            <Typography
+                                color={"#667781"}
+                                fontFamily={"inherit"}
+                                fontSize={"12px"}
+                                sx={{
+                                    textAlign: "end"
+                                }}
+                            >8</Typography>
+                        </Stack>
                     </Stack>
-                </Button>
+                    <Divider variant="inset" />
+                </>
             ))}
         </Paper>
     );

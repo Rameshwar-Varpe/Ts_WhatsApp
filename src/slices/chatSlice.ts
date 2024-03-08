@@ -18,7 +18,7 @@ const initialState: initialStateType = {
     chats: [
         {
             id: 7,
-            content: "Good Night...",
+            content: "I'll call you later. I have some work pending and tomarrow is deadline",
             time: '08:56',
             date: '05/03/2024',
             mobile: 9324102653,
