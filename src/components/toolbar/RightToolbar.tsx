@@ -2,15 +2,14 @@ import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
 import { ChatSearchIcon, DefaultMenuIcon, VideoCallDropDownIcon, VideoCallIcon } from '../../assects/icons/icons';
 import { useSelector } from 'react-redux';
 
-// interface Contact {
-//     name: string;
-//     lastActive: string;
-//     profile: string;
-// }
-
 export default function RightToolbar() {
-    const selectedContact = useSelector((state: any) => state.selectedContact.selectedContact);
-
+    const selectedId = useSelector((state : any) => state.selectedContactId.selectedContactId);
+    
+    const contacts = useSelector((state : any) => state.contacts.contacts)  
+    const sContact = contacts.find((contact : any) => contact.id === selectedId);
+    
+    
+    
     return (
         <Stack
             direction="row"
@@ -20,16 +19,9 @@ export default function RightToolbar() {
             borderLeft="0.5px solid #d1d7db"
         // width={"80px"}
         >
-            <Stack direction="row" alignItems="center"
-                // width={"inherit"}
-                sx={{
-                    // overflow: "hidden",
-                    // textOverflow: "ellipsis",
-                    // whiteSpace: "nowrap"
-                }}
-            >
+            <Stack direction="row" alignItems="center">
                 <Box sx={{ padding: "10px 16px" }}>
-                    <Avatar alt="Contact Icon" src={selectedContact.profile} />
+                    <Avatar alt="Contact Icon" src={sContact.profile} />
                 </Box>
                 <Box
                 // width={"inherit"}
@@ -43,7 +35,7 @@ export default function RightToolbar() {
                             WebkitBoxOrient: "vertical",
                         }}
                     >
-                        {selectedContact.name}
+                        {sContact.name}
                     </Typography>
                     <Typography
                         color="#667781"
@@ -57,7 +49,7 @@ export default function RightToolbar() {
                             WebkitBoxOrient: 'vertical'
                         }}
                     >
-                        {selectedContact.lastActive}
+                        {sContact.lastActive}
                     </Typography>
                 </Box>
             </Stack>

@@ -8,7 +8,10 @@ import ChatSection from './rightSection/ChatSection';
 import DefaultPage from './rightSection/DefaultPage';
 
 export default function Dashboard() {
-    const selectedContact = useSelector((state: any) => state.selectedContact.selectedContact)
+    const selectedContact = useSelector((state: any) => state.selectedContact.selectedContact);
+    const selectedId = useSelector((state : any) => state.selectedContactId.selectedContactId);
+
+    
     return (
         <>
             <Stack
@@ -50,7 +53,7 @@ export default function Dashboard() {
                     // justifyContent={"space-between"}
                     > */}
                     {
-                        Object.values(selectedContact).length < 1
+                        selectedId === 0
                             ?
                             <DefaultPage />
                             :
