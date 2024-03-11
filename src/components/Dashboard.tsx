@@ -9,7 +9,6 @@ import DefaultPage from './rightSection/DefaultPage';
 
 export default function Dashboard() {
     const selectedContact = useSelector((state: any) => state.selectedContact.selectedContact)
-
     return (
         <>
             <Stack
@@ -30,12 +29,11 @@ export default function Dashboard() {
                     >
                         <LeftToolbar />
                         <SearchBar />
-                        <ChatListSection
-                        // contacts={contacts}
-                        // setContacts={setContacts}
-                        // chats={chats}
-                        // setChats={setChats}
-                        />
+                        {/* <Outlet /> */}
+
+                        {/* <Link to={`chatlistsection`}> */}
+                        <ChatListSection />
+                        {/* </Link> */}
                     </Stack>
                 </Grid>
                 <Grid

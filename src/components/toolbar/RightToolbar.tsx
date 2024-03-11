@@ -18,10 +18,10 @@ export default function RightToolbar() {
             alignItems="center"
             bgcolor="#f0f2f5"
             borderLeft="0.5px solid #d1d7db"
-            // width={"80px"}
+        // width={"80px"}
         >
             <Stack direction="row" alignItems="center"
-            // width={"inherit"}
+                // width={"inherit"}
                 sx={{
                     // overflow: "hidden",
                     // textOverflow: "ellipsis",
@@ -36,8 +36,8 @@ export default function RightToolbar() {
                 >
                     <Typography color="#111b21" fontSize="16px" fontFamily="inherit"
                         sx={{
-                            overflow:"hidden",
-                            textOverflow:"ellipsis",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
                             display: "-webkit-box",
                             WebkitLineClamp: "1",
                             WebkitBoxOrient: "vertical",
@@ -45,17 +45,17 @@ export default function RightToolbar() {
                     >
                         {selectedContact.name}
                     </Typography>
-                    <Typography 
-                    color="#667781" 
-                    fontSize="13px" 
-                    fontFamily="inherit"
-                    sx={{
-                        overflow:'hidden',
-                        textOverflow:'ellipsis',
-                        display:'-webkit-box',
-                        WebkitLineClamp:"1",
-                        WebkitBoxOrient:'vertical'
-                    }}
+                    <Typography
+                        color="#667781"
+                        fontSize="13px"
+                        fontFamily="inherit"
+                        sx={{
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            display: '-webkit-box',
+                            WebkitLineClamp: "1",
+                            WebkitBoxOrient: 'vertical'
+                        }}
                     >
                         {selectedContact.lastActive}
                     </Typography>
@@ -71,9 +71,11 @@ export default function RightToolbar() {
                         direction="row"
                         // padding="0 14px 0 14px"
                         padding="6px 10px"
-                        alignItems="center"
+                        // alignItems="center"
                     >
-                        <Box display="flex">
+                        <Box
+                            display="flex"
+                        >
                             <Box>
                                 <VideoCallIcon />
                             </Box>

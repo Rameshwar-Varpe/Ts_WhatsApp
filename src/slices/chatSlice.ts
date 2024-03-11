@@ -17,15 +17,6 @@ interface initialStateType {
 const initialState: initialStateType = {
     chats: [
         {
-            id: 7,
-            content: "I'll call you later. I have some work pending and tomarrow is deadline",
-            time: '08:56',
-            date: '05/03/2024',
-            mobile: 9324102653,
-            deliveredStatus: true,
-            readStatus: true
-        },
-        {
             id: 1,
             content: "Hiii!!! Whats going on aa😃",
             time: '13:24',
@@ -39,7 +30,7 @@ const initialState: initialStateType = {
             content: "Good morning...",
             time: '13:24',
             date: '02/03/2024',
-            mobile: 7218724953,
+            mobile: 721872495,
             deliveredStatus: true,
             readStatus: true
         },
@@ -76,6 +67,15 @@ const initialState: initialStateType = {
             time: '16:26',
             date: '01/01/2024',
             mobile: 9322755952,
+            deliveredStatus: true,
+            readStatus: true
+        },
+        {
+            id: 7,
+            content: "I'll call you later. I have some work pending and tomarrow is deadline",
+            time: '08:56',
+            date: '05/03/2024',
+            mobile: 9324102653,
             deliveredStatus: true,
             readStatus: true
         }
