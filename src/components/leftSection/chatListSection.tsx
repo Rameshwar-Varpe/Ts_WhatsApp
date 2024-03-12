@@ -42,7 +42,7 @@ function ChatListSection() {
 
     const handleButtonClick = (id: any) => {
         dispatch(setSelectedContactId(id));
-        navigate(`/chatSection/${id}`);
+        navigate(`/chatSection/${id}`,{state: {name : 'Rameshwar'}});
     };
 
     return (

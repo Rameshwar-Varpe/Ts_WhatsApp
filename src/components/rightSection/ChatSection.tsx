@@ -4,11 +4,18 @@ import RightToolbar from '../toolbar/RightToolbar';
 import { PlusIcon, SendIcon, SmilyIcon, VoiceIcon } from '../../assects/icons/icons';
 import bgImage from '../../assects/images/bg_whatsapp_chat.png'
 import { useSelector } from 'react-redux';
+import { useLocation, useParams } from 'react-router';
 
 export default function ChatSection() {
     const [sendOption, setSendOption] = useState(false);
-    const selectedId = useSelector((state : any) => state.selectedContactId.selectedContactId);
+    // const selectedId = useSelector((state : any) => state.selectedContactId.selectedContactId);
 
+    const {id} = useParams();
+    const selectedId = id;
+    const location = useLocation();
+    console.log(".....................************ ",location.state.name);
+    
+    
     // useEffect(() => {
     //  console.log("useEffect", selectedId)
     // }, [selectedId])

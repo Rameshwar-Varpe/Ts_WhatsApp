@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children:[
       {
-        path:`/chatsection/`,
+        path:`/chatsection/:id`,
         element: <ChatSection/>
       }
     ]
